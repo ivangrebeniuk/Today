@@ -7,5 +7,6 @@ target 'Today' do
 
   # Pods for Today
   pod 'SnapKit'
+  pod 'SwiftLint'
 
 end

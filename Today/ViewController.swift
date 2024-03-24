@@ -12,8 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.backgroundColor = .yellow
     }
-
-
+    
+    func ololo() {
+        let x: String = "Bobby"
+        print(x)
+    }
 }
-
