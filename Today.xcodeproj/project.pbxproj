@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		2688592E0D7070B2AE5C895D /* Pods_Today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054CB42F5C1E05CADD7AE95D /* Pods_Today.framework */; };
 		4898FB482BB0A6CF004566D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4898FB472BB0A6CF004566D5 /* AppDelegate.swift */; };
-		4898FB4C2BB0A6CF004566D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4898FB4B2BB0A6CF004566D5 /* ViewController.swift */; };
+		4898FB4C2BB0A6CF004566D5 /* RemindersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4898FB4B2BB0A6CF004566D5 /* RemindersListViewController.swift */; };
 		4898FB512BB0A6D2004566D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4898FB502BB0A6D2004566D5 /* Assets.xcassets */; };
 		4898FB542BB0A6D2004566D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4898FB522BB0A6D2004566D5 /* LaunchScreen.storyboard */; };
+		48BAA4002BB982E30003E82F /* RemindersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAA3FF2BB982E30003E82F /* RemindersListPresenter.swift */; };
+		48BAA4022BB982F30003E82F /* RemindersListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAA4012BB982F30003E82F /* RemindersListAssembly.swift */; };
+		48BAA4072BB98C820003E82F /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BAA4062BB98C820003E82F /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,10 +22,13 @@
 		47C58314ACAC01F91AEA47B4 /* Pods-Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.debug.xcconfig"; path = "Target Support Files/Pods-Today/Pods-Today.debug.xcconfig"; sourceTree = "<group>"; };
 		4898FB442BB0A6CF004566D5 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4898FB472BB0A6CF004566D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4898FB4B2BB0A6CF004566D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4898FB4B2BB0A6CF004566D5 /* RemindersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersListViewController.swift; sourceTree = "<group>"; };
 		4898FB502BB0A6D2004566D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4898FB532BB0A6D2004566D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4898FB552BB0A6D2004566D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48BAA3FF2BB982E30003E82F /* RemindersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersListPresenter.swift; sourceTree = "<group>"; };
+		48BAA4012BB982F30003E82F /* RemindersListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersListAssembly.swift; sourceTree = "<group>"; };
+		48BAA4062BB98C820003E82F /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		DE4A09B6D32A034EC7BB6409 /* Pods-Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.release.xcconfig"; path = "Target Support Files/Pods-Today/Pods-Today.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,13 +65,64 @@
 		4898FB462BB0A6CF004566D5 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				48BAA3FC2BB982890003E82F /* UserStories */,
 				4898FB472BB0A6CF004566D5 /* AppDelegate.swift */,
-				4898FB4B2BB0A6CF004566D5 /* ViewController.swift */,
 				4898FB502BB0A6D2004566D5 /* Assets.xcassets */,
 				4898FB522BB0A6D2004566D5 /* LaunchScreen.storyboard */,
 				4898FB552BB0A6D2004566D5 /* Info.plist */,
 			);
 			path = Today;
+			sourceTree = "<group>";
+		};
+		48BAA3FC2BB982890003E82F /* UserStories */ = {
+			isa = PBXGroup;
+			children = (
+				48BAA3FD2BB9829B0003E82F /* RemindersList */,
+			);
+			path = UserStories;
+			sourceTree = "<group>";
+		};
+		48BAA3FD2BB9829B0003E82F /* RemindersList */ = {
+			isa = PBXGroup;
+			children = (
+				48BAA4042BB98C650003E82F /* Core */,
+				48BAA3FE2BB982A50003E82F /* Presentation */,
+			);
+			path = RemindersList;
+			sourceTree = "<group>";
+		};
+		48BAA3FE2BB982A50003E82F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				48BAA4032BB982FE0003E82F /* Views */,
+				4898FB4B2BB0A6CF004566D5 /* RemindersListViewController.swift */,
+				48BAA3FF2BB982E30003E82F /* RemindersListPresenter.swift */,
+				48BAA4012BB982F30003E82F /* RemindersListAssembly.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		48BAA4032BB982FE0003E82F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48BAA4042BB98C650003E82F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				48BAA4052BB98C6A0003E82F /* Models */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		48BAA4052BB98C6A0003E82F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48BAA4062BB98C820003E82F /* Reminder.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9BD1FA6907BE5B87BCBE4F27 /* Pods */ = {
@@ -217,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4898FB4C2BB0A6CF004566D5 /* ViewController.swift in Sources */,
+				4898FB4C2BB0A6CF004566D5 /* RemindersListViewController.swift in Sources */,
 				4898FB482BB0A6CF004566D5 /* AppDelegate.swift in Sources */,
+				48BAA4002BB982E30003E82F /* RemindersListPresenter.swift in Sources */,
+				48BAA4022BB982F30003E82F /* RemindersListAssembly.swift in Sources */,
+				48BAA4072BB98C820003E82F /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +423,9 @@
 				INFOPLIST_FILE = Today/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,9 +433,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrebeniuk.today.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -391,8 +455,9 @@
 				INFOPLIST_FILE = Today/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,9 +465,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrebeniuk.today.Today;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
